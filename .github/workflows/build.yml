@@ -36,3 +36,10 @@ jobs:
       - name: Check Build
         run: |
           SKIP_WASM_BUILD=1 cargo check --release
+      - name: Create Build
+        run: |
+          SKIP_WASM_BUILD=2 cargo build --release
+          
+      - name: Test code
+        run: |
+          SKIP_WASM_BUILD=3 cargo test
